@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      
+      <actionSet
+            label="Action Set"
+            visible="true"
+            id="YtbWorkspace.actionSet">
+       
+      <menu label="YTB Workspace" path="additions" id="Ytbmenu">
+            <separator  name="Ytbgroup"> </separator > 
+      </menu>  
+      
+      <action
+               label="Setup Rest / Portal Workspace"           
+               class="framework.plugin.workspace.actions.ConfigureActionComplete"              
+               menubarPath="Ytbmenu/NoYtbgroup"            
+               id="framework.plugin.workspace.actions.ConfigureActionComplete">
+     </action>
+      
+      <menu label="Advanced" path="Ytbmenu/additions" id="YtbgroupsSetup">
+            <separator name="YTBWorkspaceSetup"> </separator> 
+      </menu>
+         
+      <menu label="YTB Rest" path="Ytbmenu/additions" id="Ytbgroups">
+            <separator name="YTBWorkspaceGroup"> </separator> 
+      </menu>
+         
+      
+      <menu label="YTB Portal" path="Ytbmenu/additions" id="YtbgroupsPortalSetup">
+            <separator name="YTBWorkspacePortalSetup"> </separator> 
+      </menu>
+      
+      	<action
+               label="Reinstate Local Environment"           
+               class="framework.plugin.workspace.actions.ReinstateEnvironmentAction"              
+              menubarPath="Ytbmenu/YtbgroupsPortalSetup/Portal"            
+               id="framework.plugin.workspace.actions.ReinstateEnvironmentAction">
+         </action>
+         
+         <action
+               label="Configure Portal Server"           
+               class="framework.plugin.workspace.actions.ConfigurePortalServerAction"              
+              menubarPath="Ytbmenu/YtbgroupsPortalSetup/Portal"            
+               id="framework.plugin.workspace.actions.ConfigurePortalServerAction">
+         </action> 
+         
+         <action
+               label="Setup EARs/WARs on Server"           
+               class="framework.plugin.workspace.actions.SetupPortalEARAction"              
+              menubarPath="Ytbmenu/YtbgroupsPortalSetup/Portal"            
+               id="framework.plugin.workspace.actions.SetupPortalEARAction">
+         </action> 
+         
+         <action
+               label="Setup Portal Workspace"           
+               class="framework.plugin.workspace.actions.ConfigurePortalAction"              
+              menubarPath="Ytbmenu/YtbgroupsPortalSetup/Portal"            
+               id="framework.plugin.workspace.actions.ConfigurePortalAction">
+         </action>
+         
+         <action
+               label="Rest Database configuration"           
+               class="framework.plugin.workspace.actions.DatabaseConfigurationAction"              
+              menubarPath="Ytbmenu/Ytbgroups/Rest"            
+               id="framework.plugin.workspace.actions.DatabaseConfigurationAction">
+         </action>  
+         
+         <action
+               label="Setup Rest Workspace"           
+               class="framework.plugin.workspace.actions.ConfigureAction"              
+              menubarPath="Ytbmenu/Ytbgroups/Rest"            
+               id="framework.plugin.workspace.actions.ConfigureAction">
+         </action>  
+         
+         <action
+               label="Rest Create / Configure Profile"           
+               class="framework.plugin.workspace.actions.CreateProfile"              
+              menubarPath="Ytbmenu/Ytbgroups/Rest"            
+               id="framework.plugin.workspace.actions.CreateProfile">
+         </action> 
+  
+		<action
+               label="Update Settings / Classpath"           
+               class="framework.plugin.workspace.actions.UpdateSettingsAction"              
+              menubarPath="Ytbmenu/YtbgroupsSetup/Advanced"            
+               id="framework.plugin.workspace.actions.UpdateSettingsAction">
+         </action>  
+         
+         <action
+               label="Update Jars"           
+               class="framework.plugin.workspace.actions.UpdateJars"              
+              menubarPath="Ytbmenu/YtbgroupsSetup/Advanced"            
+               id="framework.plugin.workspace.actions.UpdateJars">
+         </action> 
+         
+       </actionSet>
+   </extension>   
+
+
+	<extension point="org.eclipse.ant.core.antProperties">
+      <antProperty name="eclipse.home"
+           class="org.eclipse.ant.internal.core.AntPropertyValueProvider"/>
+      <antProperty name="eclipse.running"
+           value="false"/>
+   </extension> 
+
+</plugin>
